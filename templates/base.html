@@ -43,7 +43,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Flaskify</a>
+                <a class="navbar-brand page-scroll" href="{{ url_for('index') }}">Flaskify</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,18 +64,6 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Flaskify!</div>
-                <div class="intro-heading">A Flask Application</div>
-                <a href="#services" class="page-scroll btn btn-xl">Login</a>
-                <a href="#services" class="page-scroll btn btn-xl">Sign Up</a>
-            </div>
-        </div>
-    </header>
 
     {% block content %}
     {% endblock %}
