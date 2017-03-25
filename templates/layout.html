@@ -71,8 +71,8 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome To Flaskify!</div>
                 <div class="intro-heading">A Flask Application</div>
-                <a href="#services" class="page-scroll btn btn-xl">Login</a>
-                <a href="#services" class="page-scroll btn btn-xl">Sign Up</a>
+                <a href="{{ url_for('login') }}" class="page-scroll btn btn-xl">Login</a>
+                <a href="{{ url_for('signup') }}" class="page-scroll btn btn-xl">Sign Up</a>
             </div>
         </div>
     </header>
