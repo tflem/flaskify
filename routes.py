@@ -1,13 +1,8 @@
-from flask import Flask, render_template, request, session, redirect, url_for
-from models import db, User
+'''
+request, session, redirect, url_for
 from forms import SignupForm, LoginForm
 
 app = Flask(__name__)
-
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:@localhost/flaskify"
-db.init_app(app)
-
-app.secret_key = "development-key"
 
 @app.route("/")
 def index():
@@ -73,6 +68,4 @@ def home():
   	return redirect(url_for("login"))
 
   return render_template("home.html")
-
-if __name__ == "__main__":
-  app.run(debug=False)
+  '''
