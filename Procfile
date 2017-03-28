@@ -1,1 +1,1 @@
-web: gunicorn flaskify.run:app
+web: gunicorn run:app
