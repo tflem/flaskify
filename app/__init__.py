@@ -1,5 +1,4 @@
 # third-party imports
-import os
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
@@ -12,8 +11,6 @@ from config import app_config
 # db variable initialization
 db = SQLAlchemy()
 login_manager = LoginManager()
-
-SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
 def create_app(config_name):
     app = Flask(__name__, instance_relative_config=True)
