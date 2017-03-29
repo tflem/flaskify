@@ -4,13 +4,11 @@ from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-import os
 
 # local imports
 from config import app_config
 
 # db variable initialization
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db = SQLAlchemy()
 login_manager = LoginManager()
 
