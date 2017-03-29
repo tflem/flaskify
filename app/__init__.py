@@ -10,7 +10,7 @@ import os
 from config import app_config
 
 # db variable initialization
-SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db = SQLAlchemy()
 login_manager = LoginManager()
 
