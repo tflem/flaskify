@@ -5,8 +5,7 @@ class Config(object):
     Common configurations
     """
 
-    # Put any configurations here that are common across all environments
-    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+    # Put any configurations here that are common across all environments    
 
 class DevelopmentConfig(Config):
     """
