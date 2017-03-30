@@ -23,7 +23,7 @@ conn = psycopg2.connect(
 from config import app_config
 
 # db variable initialization
-db = SQLAlchemy()
+db = SQLAlchemy(app)
 login_manager = LoginManager()
 
 def create_app(config_name):
