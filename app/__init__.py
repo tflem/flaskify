@@ -11,6 +11,7 @@ from config import app_config
 # db variable initialization
 db = SQLAlchemy()
 login_manager = LoginManager()
+['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 
 
 def create_app(config_name):
