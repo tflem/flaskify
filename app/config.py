@@ -1,9 +1,13 @@
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 class Config(object):
     """
     Common configurations
     """
 
     # Put any configurations here that are common across all environments    
+    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
        
 
 class DevelopmentConfig(Config):
