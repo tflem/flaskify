@@ -7,8 +7,9 @@ class Config(object):
     """
 
     # Put any configurations here that are common across all environments    
-    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
-       
+    DEBUG = False
+    TESTING = False
+    CSRF_ENABLED = True       
 
 class DevelopmentConfig(Config):
     """

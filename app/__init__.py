@@ -3,6 +3,7 @@ from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 # local imports
 from config import app_config
@@ -33,5 +34,7 @@ def create_app(config_name):
 
     from .home import home as home_blueprint
     app.register_blueprint(home_blueprint)
+
+    print(os.environ['APP_SETTINGS'])
 
     return app
