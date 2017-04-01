@@ -1,15 +1,15 @@
 import os
-basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
     """
     Common configurations
     """
 
-    # Put any configurations here that are common across all environments    
-    DEBUG = False
-    TESTING = False
-    CSRF_ENABLED = True       
+    # Put any configurations here that are common across all environments
+
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL',
+             'postgresql+psycopg2://postgres:Fa37PhAn@localhost/flaskify_db')
+    print SQLALCHEMY_DATABASE_URI       
 
 class DevelopmentConfig(Config):
     """
