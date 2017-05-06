@@ -1,0 +1,32 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}
+    {% if add_department %}
+        Add Department
+    {% else %}
+        Edit Department
+    {% endif %}
+{% endblock %}
+{% block content %}
+<section id="contact">
+  <div class="container">
+    <div class="outer">
+      <div class="middle">
+        <div class="inner">
+        <div class="col-md-6 text-left">
+            {% if add_department %}
+                <h2 class="section-heading">Add Department</h2>
+            {% else %}
+                <h3 class="section-heading">Edit Department</h3>
+            {% endif %}
+            <br/>
+            <div class="section-heading">
+            {{ wtf.quick_form(form, button_map={'submit': 'btn btn-xl'}) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+{% endblock %}

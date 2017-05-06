@@ -1,0 +1,26 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}Assign Employee{% endblock %}
+{% block content %}
+<section id="contact">
+  <div class="container">
+    <div class="outer">
+      <div class="middle">
+        <div class="inner">
+        <div class="col-md-6 text-left">
+            <h2 class="section-heading">Assign</h2>
+                <h3 class="section-heading">Department and Role</h3>
+            <span style="color:  #fed136;">
+                {{ employee.first_name }} {{ employee.last_name }}
+            </span>
+            <br/>
+            <div class="section-heading">
+            {{ wtf.quick_form(form, button_map={'submit': 'btn btn-xl'}) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+{% endblock %}

@@ -35,10 +35,16 @@ def login():
         # the password entered matches the password in the database
 		employee = Employee.query.filter_by(email=form.email.data).first()
 		if employee is not None and employee.verify_password(form.password.data):
+			
 			login_user(employee)
-			return redirect(url_for('home.dashboard'))
+
+			if employee.is_admin:
+				return redirect(url_for('home.admin_dashboard'))
+			else:
+				return redirect(url_for('home.dashboard'))
+			
 		else:
-			flash('Invalid email or password.')
+			 flash('Invalid email or password.')
 
 	return render_template('auth/login.html', form=form, title='Login')
 

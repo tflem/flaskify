@@ -14,6 +14,9 @@
     <!-- Bootstrap Core CSS -->
     <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="shortcut icon">
+
     <!-- Custom Fonts -->
     <link href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -23,6 +26,8 @@
 
     <!-- Theme CSS -->
     <link href="{{ url_for('static', filename='css/agency.min.css') }}" rel="stylesheet">
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,9 +55,24 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_authenticated %}
+                      {% if current_user.is_admin %}
+                        <li>
+                            <a href="{{ url_for('home.admin_dashboard') }}">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('admin.list_departments') }}">Departments</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('admin.list_roles') }}">Roles</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('admin.list_employees') }}">Employees</a>
+                        </li>
+                      {% else %}
                         <li>
                             <a href="{{ url_for('home.dashboard') }}">Dashboard</a>
                         </li>
+                      {% endif %}
                         <li>
                             <a href="{{ url_for('auth.logout') }}">Logout</a>
                         </li>
@@ -83,9 +103,9 @@
         <!-- /.container-fluid -->
     </nav>
 
-    {% block content %}    
-    {% endblock %}   
-     
+    {% block content %}
+    {% endblock %}
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -130,6 +150,6 @@
 
     <!-- Theme JavaScript -->
     <script src="{{ url_for('static', filename='js/agency.min.js') }}"></script>
-       
+
     </body>
     </html>
