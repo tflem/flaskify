@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found{% endblock %}
+{% block content %}
+<section id="contact">
+  <div class="container">
+    <div class="outer">
+      <div class="middle">
+        <div class="inner">
+        <div class="col-md-12 text-center">
+            <h2 class="section-heading">404 Error</h2>
+                <h3 class="section-heading">The Page You're Looking for Doesn't Exist</h3>
+                <hr class="intro-divider">
+                <a href="{{ url_for('home.homepage') }}" class="btn btn-xl">
+                    <i class="fa fa-home"></i>
+                    Home
+                </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+{% endblock %}
