@@ -9,6 +9,10 @@ from ..models import Employee
 # Register route, adds employee to database via registration from
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
+	"""
+	Handles requests to the /register route.
+	Add an employee to database via registration form.
+	"""
 	form = RegistrationForm()
 	if form.validate_on_submit():
 		employee = Employee(email=form.email.data,
@@ -28,29 +32,37 @@ def register():
 # Login route, logs employee in via login form
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+	"""
+	Handles requests to the /login route.
+	Logs an employee in via login form.
+	"""
 	form = LoginForm()
 	if form.validate_on_submit():
-		
+
 		# check whether employee exists in the database and whether
         # the password entered matches the password in the database
 		employee = Employee.query.filter_by(email=form.email.data).first()
 		if employee is not None and employee.verify_password(form.password.data):
-			
+
 			login_user(employee)
 
 			if employee.is_admin:
 				return redirect(url_for('home.admin_dashboard'))
 			else:
 				return redirect(url_for('home.dashboard'))
-			
+
 		else:
 			 flash('Invalid email or password.')
 
 	return render_template('auth/login.html', form=form, title='Login')
 
 @auth.route('/logout')
+@login_required
 def logout():
+	"""
+	Handles requests to the /logout route.
+	Logs an employee out via logout link.
+	"""
 	logout_user()
 	flash('You have successfully been logged out.')
 	return redirect(url_for('auth.login'))
-

@@ -20,8 +20,4 @@ gunicorn==19.7.1
 psycopg2==2.7.1
 SQLAlchemy==1.1.7
 Flask-SQLAlchemy==2.2
-
-
-
-
-
+Flask-Testing==0.6.2
