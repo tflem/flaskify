@@ -25,7 +25,7 @@ class Employee(UserMixin, db.Model):
     @property
     def password(self):
         """
-        Prevent pasword from being accessed
+        Prevent password from being accessed
         """
         raise AttributeError('password is not a readable attribute.')
 
@@ -54,7 +54,6 @@ class Department(db.Model):
     """
     Create a Department table
     """
-
     __tablename__ = 'departments'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -70,7 +69,6 @@ class Role(db.Model):
     """
     Create a Role table
     """
-
     __tablename__ = 'roles'
 
     id = db.Column(db.Integer, primary_key=True)
