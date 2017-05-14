@@ -303,9 +303,6 @@ section h3.section-subheading {
   text-transform: none;
 }
 
-aside.clients img {
-  margin: 50px auto;
-}
 section#contact {
   background-color: #222222;
   background-image: url('../img/map-image.png');
